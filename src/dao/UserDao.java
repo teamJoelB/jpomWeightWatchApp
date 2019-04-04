@@ -29,6 +29,7 @@ public class UserDao {
         
         ordre.setString(1,login); 
         ordre.setString(2,mdp); 
+       
         
         ResultSet rs = ordre.executeQuery() ; 
         
@@ -55,12 +56,11 @@ public class UserDao {
         PreparedStatement ordre = Connexion.prepareStatement(sql) ; 
         ordre.setString(1, u.getNom());
         ordre.setString(2, u.getPrenom());
-        ordre.setString(3, u.getMail());
         ordre.setString(3, u.getAge());
-        ordre.setString(3, u.getSexe());
-        ordre.setString(3, u.getTaille());
-        ordre.setDouble(4, u.getPoids());
-        ordre.setString(4, u.getMdp());
+        ordre.setString(4, u.getSexe());
+        ordre.setString(5, u.getMail());
+        ordre.setString(6, u.getTaille());
+        ordre.setString(7, u.getMdp());
         
                
         ordre.execute() ; 
