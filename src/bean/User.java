@@ -100,6 +100,7 @@ public class User {
     }
     
     public static int userActuel ; 
+    public static String nomActuel; 
 
     
 }

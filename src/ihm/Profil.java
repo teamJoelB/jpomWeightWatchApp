@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package ihm;
-
+import bean.User ; 
 /**
  *
  * @author ESIC
@@ -62,6 +62,11 @@ public class Profil extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         lbNom.setText("Nom : ");
 
@@ -374,6 +379,11 @@ public class Profil extends javax.swing.JFrame {
     private void ButtonObjectifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonObjectifActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonObjectifActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        
+        
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
