@@ -29,6 +29,7 @@ public class UserDao {
         
         ordre.setString(1,login); 
         ordre.setString(2,mdp); 
+       
         
         ResultSet rs = ordre.executeQuery() ; 
         
@@ -41,7 +42,6 @@ public class UserDao {
             u.setAge(rs.getString("age")); 
             u.setSexe(rs.getString("sexe")); 
             u.setTaille(rs.getString("taille")); 
-            u.setPoids(rs.getDouble("poids")); 
             u.setMdp(rs.getString("mdp")); 
         }
         
@@ -49,18 +49,17 @@ public class UserDao {
     } 
      
    public static void insertUser(User u) throws SQLException {
-        String sql = "INSERT INTO user (nom, prenom, mail, age, sexe,taille, poids, mdp) VALUES (?,?,?,?,?,?,?,?) "; 
+        String sql = "INSERT INTO user (nom, prenom, age, sexe, mail, taille, mdp) VALUES (?,?,?,?,?,?,?,?) "; 
         Connection Connexion = ConnectBd.getConnection(); 
         
         PreparedStatement ordre = Connexion.prepareStatement(sql) ; 
         ordre.setString(1, u.getNom());
         ordre.setString(2, u.getPrenom());
-        ordre.setString(3, u.getMail());
         ordre.setString(3, u.getAge());
-        ordre.setString(3, u.getSexe());
-        ordre.setString(3, u.getTaille());
-        ordre.setDouble(4, u.getPoids());
-        ordre.setString(4, u.getMdp());
+        ordre.setString(4, u.getSexe());
+        ordre.setString(5, u.getMail());
+        ordre.setString(6, u.getTaille());
+        ordre.setString(7, u.getMdp());
         
                
         ordre.execute() ; 

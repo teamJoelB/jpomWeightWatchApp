@@ -21,7 +21,7 @@ public class ConnectBd {
     protected static final String PASSWORD = "" ;
     
     public static Connection getConnection() throws SQLException{ 
-        return DriverManager.getConnection(URL, USER, PASSWORD); // connect à la base de données avec le bon url, user, password
+        return DriverManager.getConnection(URL, USER, PASSWORD); 
     }
     
 }
