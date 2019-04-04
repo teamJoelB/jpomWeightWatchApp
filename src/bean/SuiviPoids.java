@@ -5,6 +5,10 @@
  */
 package bean;
 
+import dao.ConnectBd;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Date;
 
 /**
@@ -50,6 +54,5 @@ public class SuiviPoids {
         this.poids = poids;
     }
     
- 
     
 }

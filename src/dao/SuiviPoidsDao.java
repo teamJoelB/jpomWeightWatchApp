@@ -15,39 +15,28 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List; 
 
+
 /**
  *
  * @author ESIC
  */
 public class SuiviPoidsDao {
-    /*
-        List<SuiviPoids> Poids =  new ArrayList<>() ; 
-        
-        public static List<SuiviPoids> AllPoids() throws SQLException { 
-        List<SuiviPoids> Poids =  new ArrayList<>() ; 
-        String sql = "SELECT table_suivipoids.idUser, table_suivipoids.date, table_suivipoids.poidsA FROM table_suivipoids " ; 
-        
-        Connection Connexion = ConnectBd.getConnection(); 
-        
-        Statement req = Connexion.createStatement (); 
-        
-        ResultSet rs = req.executeQuery(sql) ; 
-        
-        while(rs.next())
-        { 
-           SuiviPoids p  = new SuiviPoids(); 
-           User u = new User ();
-            p.setId(rs.getString(("idUser"))); // on lui donne l'id de la bd 
-            p.setDate(rs.getDate("date")) ; // on lui donne le nom de la bd
-            p.setPoids(rs.getDouble("poidsA"));
-            
-            SuiviPoids.add(p); 
-        }
-            return SuiviPoids ;
+    
+    
        
-        }*/
-    
- 
-    
-    
+        
+     public static void insertPoids(SuiviPoids p) throws SQLException {
+        String sql = "INSERT INTO table_suivipoids (idUser, date, poidsA) VALUES (?,?,?) "; 
+        Connection Connexion = ConnectBd.getConnection(); 
+        User u = new User();
+        PreparedStatement ordre = Connexion.prepareStatement(sql) ; 
+        ordre.setInt(1, u.getId());
+        //ordre.setDate(2, p.getDate()); 
+        ordre.setDouble(3, p.getPoids());
+        
+               
+        ordre.execute() ; 
+        
+    } 
+
 }
