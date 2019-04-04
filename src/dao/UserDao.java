@@ -49,7 +49,7 @@ public class UserDao {
     } 
      
    public static void insertUser(User u) throws SQLException {
-        String sql = "INSERT INTO user (nom, prenom, mail, age, sexe,taille, poids, mdp) VALUES (?,?,?,?,?,?,?,?) "; 
+        String sql = "INSERT INTO user (nom, prenom, age, sexe, mail, taille, mdp) VALUES (?,?,?,?,?,?,?,?) "; 
         Connection Connexion = ConnectBd.getConnection(); 
         
         PreparedStatement ordre = Connexion.prepareStatement(sql) ; 
