@@ -217,9 +217,8 @@ public class Inscription extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(rootPane, e.getMessage());
         }
-        
+        ApresInscription A = new ApresInscription(u);
         this.setVisible(false);
-        ApresInscription A = new ApresInscription();
         A.setVisible(true);
     }//GEN-LAST:event_btValiderActionPerformed
 
