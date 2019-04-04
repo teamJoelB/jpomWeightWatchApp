@@ -10,11 +10,14 @@ import bean.User ;
  * @author ESIC
  */
 public class Profil extends javax.swing.JFrame {
+    
+    private static User utilisateur ;
 
     /**
      * Creates new form Profil
      */
-    public Profil() {
+    public Profil(User utilisateur) {
+        this.utilisateur=utilisateur ;
         initComponents();
     }
     
@@ -381,7 +384,7 @@ public class Profil extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonObjectifActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        
+        txtNom.setText(utilisateur.getNom());
         
     }//GEN-LAST:event_formWindowOpened
 
@@ -415,7 +418,7 @@ public class Profil extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Profil().setVisible(true);
+                new Profil(utilisateur).setVisible(true);
             }
         });
     }
