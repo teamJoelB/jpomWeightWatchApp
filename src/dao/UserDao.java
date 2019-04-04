@@ -49,7 +49,7 @@ public class UserDao {
     } 
      
    public static void insertUser(User u) throws SQLException {
-        String sql = "INSERT INTO table_user (nom, prenom, age, sexe, mail, taille, mdp) VALUES (?,?,?,?,?,?,?,?) "; 
+        String sql = "INSERT INTO table_user (nom, prenom, age, sexe, mail, taille, mdp) VALUES (?,?,?,?,?,?,?) "; 
         Connection Connexion = ConnectBd.getConnection(); 
         
         PreparedStatement ordre = Connexion.prepareStatement(sql) ; 
@@ -65,4 +65,28 @@ public class UserDao {
         ordre.execute() ; 
         
     } 
+   public static void insertUser2(User u) throws SQLException {
+        String sql = "INSERT INTO table_user (nom, prenom, sexe, mail, mdp) VALUES (?,?,?,?,?) "; 
+        Connection Connexion = ConnectBd.getConnection(); 
+        
+        PreparedStatement ordre = Connexion.prepareStatement(sql) ; 
+        ordre.setString(1, u.getNom());
+        ordre.setString(2, u.getPrenom());
+        ordre.setString(3, u.getSexe());
+        ordre.setString(4, u.getMail());
+        ordre.setString(5, u.getMdp());
+                  
+        ordre.execute() ;       
+    } 
+   
+   public static void insertUserTaille(User u) throws SQLException {
+        String sql = "INSERT INTO table_user (taille) VALUES (?) "; 
+        Connection Connexion = ConnectBd.getConnection(); 
+        
+        PreparedStatement ordre = Connexion.prepareStatement(sql) ; 
+        ordre.setString(1, u.getTaille());
+               
+        ordre.execute() ;       
+    } 
+
 }

@@ -90,7 +90,6 @@ private int id ;
         this.taille = taille;
     }
 
-
     public String getMdp() {
         return mdp;
     }
