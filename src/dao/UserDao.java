@@ -42,7 +42,6 @@ public class UserDao {
             u.setAge(rs.getString("age")); 
             u.setSexe(rs.getString("sexe")); 
             u.setTaille(rs.getString("taille")); 
-            u.setPoids(rs.getDouble("poids")); 
             u.setMdp(rs.getString("mdp")); 
         }
         
