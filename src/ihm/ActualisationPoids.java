@@ -6,6 +6,7 @@
 package ihm;
 
 import bean.SuiviPoids;
+import bean.User;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -17,11 +18,14 @@ import javax.swing.JTextField;
  * @author ESIC
  */
 public class ActualisationPoids extends javax.swing.JFrame {
-
+    
+    private static User utilisateur ;
+    
     /**
      * Creates new form ActualisationPoids
      */
-    public ActualisationPoids() {
+    public ActualisationPoids(User u) {
+         this.utilisateur=utilisateur ;
         initComponents();
     }
 
@@ -174,15 +178,14 @@ public class ActualisationPoids extends javax.swing.JFrame {
 
     private void btValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btValiderActionPerformed
         
-  
-
-        try {
-            SuiviPoids sp = new SuiviPoids();      
+  SuiviPoids sp = new SuiviPoids();      
             double nvpoids = Double.parseDouble(txtNvPoids.getText());
             sp.setPoids(nvpoids);
+            DateFormat d = new SimpleDateFormat("dd/MM/yyyy");
 
-        DateFormat d = new SimpleDateFormat("dd/MM/yyyy");
-        Date dat= d.parse(txtNvDate.getText());
+
+        try {
+            Date dat= d.parse(txtNvDate.getText());
             
             TxtMsg.setText("Date : "+d.format(dat)+" poids actualisé : "+nvpoids+" kg");
         } catch (Exception e) {
@@ -224,7 +227,7 @@ public class ActualisationPoids extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ActualisationPoids().setVisible(true);
+                new ActualisationPoids(utilisateur).setVisible(true);
             }
         });
     }

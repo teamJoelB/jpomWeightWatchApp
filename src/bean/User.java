@@ -11,7 +11,7 @@ package bean;
  */
 public class User {
     
-private int id ; 
+    private int id ; 
     private String nom; 
     private String prenom; 
     private String mail ; 
@@ -99,7 +99,8 @@ private int id ;
         this.mdp = mdp;
     }
     
-    
+    public static int userActuel ; 
+    public static String nomActuel; 
 
     
 }

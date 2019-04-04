@@ -4,17 +4,20 @@
  * and open the template in the editor.
  */
 package ihm;
-
+import bean.User ; 
 /**
  *
  * @author ESIC
  */
 public class Profil extends javax.swing.JFrame {
+    
+    private static User utilisateur ;
 
     /**
      * Creates new form Profil
      */
-    public Profil() {
+    public Profil(User utilisateur) {
+        this.utilisateur=utilisateur ;
         initComponents();
     }
     
@@ -62,6 +65,11 @@ public class Profil extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         lbNom.setText("Nom : ");
 
@@ -375,6 +383,11 @@ public class Profil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonObjectifActionPerformed
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        txtNom.setText(utilisateur.getNom());
+        
+    }//GEN-LAST:event_formWindowOpened
+
     /**
      * @param args the command line arguments
      */
@@ -405,7 +418,7 @@ public class Profil extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Profil().setVisible(true);
+                new Profil(utilisateur).setVisible(true);
             }
         });
     }

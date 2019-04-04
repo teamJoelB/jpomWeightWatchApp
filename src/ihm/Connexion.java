@@ -208,7 +208,7 @@ public class Connexion extends javax.swing.JFrame {
             u = UserDao.getbyLoginPass(login, mdp);   // une methode dans la class UserDao 
         
             if(u != null){
-                Profil P = new Profil();
+                Profil P = new Profil(u);
                 this.setVisible(false);
                 P.setVisible(true);
             }
