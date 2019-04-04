@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ihm;
+import bean.SuiviPoids;
 import bean.User ; 
 /**
  *
@@ -385,6 +386,14 @@ public class Profil extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         txtNom.setText(utilisateur.getNom());
+        txtPrenom.setText(utilisateur.getNom());
+        txtAge.setText(utilisateur.getAge());
+        txtTaille.setText(utilisateur.getTaille());
+        txtmail.setText(utilisateur.getMail());
+       
+       
+        
+        
         
     }//GEN-LAST:event_formWindowOpened
 
