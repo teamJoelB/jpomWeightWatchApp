@@ -5,6 +5,9 @@
  */
 package ihm;
 
+import dao.UserDao;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ESIC
@@ -150,6 +153,13 @@ public class ApresInscription extends javax.swing.JFrame {
         double poids = Double.parseDouble(txtPoids.getText());
         
         
+        
+        
+        
+        this.setVisible(false);
+        ApresInscription A = new ApresInscription();
+        A.setVisible(true);
+     
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
