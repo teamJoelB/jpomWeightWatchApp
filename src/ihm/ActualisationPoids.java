@@ -6,10 +6,10 @@
 package ihm;
 
 import bean.SuiviPoids;
-import com.sun.org.apache.xalan.internal.lib.ExsltDatetime;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -42,6 +42,7 @@ public class ActualisationPoids extends javax.swing.JFrame {
         txtNvDate = new javax.swing.JFormattedTextField();
         btAnnuler = new javax.swing.JButton();
         btValider = new javax.swing.JButton();
+        TxtMsg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,7 +58,7 @@ public class ActualisationPoids extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Date :");
 
-        txtNvDate.setText("jj-mm-aaaa");
+        txtNvDate.setText("jj/mm/aaaa");
         txtNvDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNvDateActionPerformed(evt);
@@ -109,25 +110,34 @@ public class ActualisationPoids extends javax.swing.JFrame {
             }
         });
 
+        TxtMsg.setText("jLabel3");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(94, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btAnnuler)
                 .addGap(18, 18, 18)
                 .addComponent(btValider)
                 .addGap(106, 106, 106))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(138, 138, 138)
+                        .addComponent(TxtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
+                .addGap(22, 22, 22)
+                .addComponent(TxtMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -163,25 +173,21 @@ public class ActualisationPoids extends javax.swing.JFrame {
     }//GEN-LAST:event_btAnnulerActionPerformed
 
     private void btValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btValiderActionPerformed
-        SuiviPoids sp = new SuiviPoids();      
-        double nvpoids = Double.parseDouble(txtNvPoids.getText());
-        sp.setPoids(nvpoids);
+        
   
-        DateFormat d = new SimpleDateFormat("yyyy-MM-dd");
-        //String strDate = dateFormat.format(txtNvDate);
+
         try {
-            Date dat= d.parse(txtNvDate.getText());
-            Date dne=  new Date();
-            //dne.getDate();
+            SuiviPoids sp = new SuiviPoids();      
+            double nvpoids = Double.parseDouble(txtNvPoids.getText());
+            sp.setPoids(nvpoids);
+
+        DateFormat d = new SimpleDateFormat("dd/MM/yyyy");
+        Date dat= d.parse(txtNvDate.getText());
             
+            TxtMsg.setText("Date : "+d.format(dat)+" poids actualisé : "+nvpoids+" kg");
         } catch (Exception e) {
+             JOptionPane.showMessageDialog(rootPane, e.getMessage()+"   aaaaazr ZR");
         }
-        
-        
-        //sp.setDate(strDate);
-        //sp.setDate(date);
-        
-        
     }//GEN-LAST:event_btValiderActionPerformed
 
     private void txtNvDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNvDateActionPerformed
@@ -224,6 +230,7 @@ public class ActualisationPoids extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel TxtMsg;
     private javax.swing.JButton btAnnuler;
     private javax.swing.JButton btValider;
     private javax.swing.JLabel jLabel1;
