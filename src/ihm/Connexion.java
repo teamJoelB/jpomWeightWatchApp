@@ -6,6 +6,8 @@
 package ihm;
 
 import bean.User;
+import dao.UserDao;
+import javax.swing.JOptionPane;
 // import javax.swing.JOptionPane;
 
 /**
@@ -37,6 +39,7 @@ public class Connexion extends javax.swing.JFrame {
         lbMDP = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
         txtMDP = new javax.swing.JPasswordField();
+        lbMsgConnection = new javax.swing.JLabel();
         btValiderConnexion = new javax.swing.JButton();
         btInscription = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -74,6 +77,10 @@ public class Connexion extends javax.swing.JFrame {
                     .addComponent(txtID)
                     .addComponent(txtMDP, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE))
                 .addContainerGap(53, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lbMsgConnection, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(83, 83, 83))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,7 +93,8 @@ public class Connexion extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtMDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbMDP))
-                .addGap(32, 32, 32))
+                .addGap(16, 16, 16)
+                .addComponent(lbMsgConnection, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         btValiderConnexion.setText("Connexion");
@@ -199,23 +207,22 @@ public class Connexion extends javax.swing.JFrame {
         String mdp = new String(C);
         
         
-    /*  try {
-            U = UserDao.getByLoginPass(login, mdp);    
+        try {
+            U = UserDao.getbyLoginPass(login, mdp);   // une methode dans la class UserDao 
         
             if(U != null){
-                Membre M = new Membre();
+                Profil P = new Profil();
                 this.setVisible(false);
-                M.setVisible(true);
+                P.setVisible(true);
             }
         
          else {
-                lbMsgConnexion.setText("Identifiant ou mot de passe incorrect !!");
+                lbMsgConnection.setText("Identifiant ou mot de passe incorrect !!");
             }
         }
         catch (Exception e){
              JOptionPane.showMessageDialog(rootPane, e.getMessage());
         }
-    */    
         
     }//GEN-LAST:event_btValiderConnexionActionPerformed
 
@@ -272,6 +279,7 @@ public class Connexion extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lbID;
     private javax.swing.JLabel lbMDP;
+    private javax.swing.JLabel lbMsgConnection;
     private javax.swing.JTextField txtID;
     private javax.swing.JPasswordField txtMDP;
     // End of variables declaration//GEN-END:variables

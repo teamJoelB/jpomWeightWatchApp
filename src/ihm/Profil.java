@@ -17,6 +17,10 @@ public class Profil extends javax.swing.JFrame {
     public Profil() {
         initComponents();
     }
+    
+    public void Profile(){
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
