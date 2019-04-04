@@ -187,7 +187,7 @@ public class ActualisationPoids extends javax.swing.JFrame {
             TxtMsg.setText("Date : "+d.format(dat)+" poids actualisé : "+nvpoids+" kg");
         } catch (Exception e) {
              JOptionPane.showMessageDialog(rootPane, e.getMessage()+"   aaaaazr ZR");
-        }
+         }
     }//GEN-LAST:event_btValiderActionPerformed
 
     private void txtNvDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNvDateActionPerformed
