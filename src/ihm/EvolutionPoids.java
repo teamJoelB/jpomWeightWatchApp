@@ -87,14 +87,14 @@ public class EvolutionPoids extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-   private DefaultCategoryDataset createDataset( ) {
+  /* private DefaultCategoryDataset createDataset( ) {
       DefaultCategoryDataset dataset = new DefaultCategoryDataset( );
       dataset.addValue(poids,  NORMAL, NORMAL);
       
       return dataset;
       
      
-   }
+   }*/
    
    
     

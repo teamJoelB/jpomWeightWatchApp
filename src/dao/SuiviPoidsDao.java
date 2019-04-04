@@ -19,7 +19,7 @@ import java.util.List;
  * @author ESIC
  */
 public class SuiviPoidsDao {
-    
+    /*
         List<SuiviPoids> Poids =  new ArrayList<>() ; 
         
         public static List<SuiviPoids> AllPoids() throws SQLException { 
@@ -44,7 +44,7 @@ public class SuiviPoidsDao {
         }
             return SuiviPoids ;
        
-        }
+        }*/
     
     
 }
