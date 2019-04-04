@@ -21,7 +21,7 @@ public class UserDao {
         
         User u = null ; 
         
-        String sql = "SELECT * FROM user WHERE mail=? AND mdp=?"; 
+        String sql = "SELECT * FROM table_user WHERE mail=? AND mdp=?"; 
         
         Connection connexion = ConnectBd.getConnection() ; 
         
@@ -35,7 +35,7 @@ public class UserDao {
         
         if (rs.next()) { // rs.next : vaut true si on arrive à récuperer une donnée dans la bd. S'il vaut TRUE, 
             u = new User(); //on crée un utilisateur
-            u.setId(rs.getInt("id")); // on lui donne l'id de la bd 
+            u.setId(rs.getInt("idUser")); // on lui donne l'id de la bd 
             u.setNom(rs.getString("nom")) ; // on lui donne le nom de la bd
             u.setPrenom(rs.getString("prenom"));
             u.setMail(rs.getString("mail")); 
@@ -49,7 +49,7 @@ public class UserDao {
     } 
      
    public static void insertUser(User u) throws SQLException {
-        String sql = "INSERT INTO user (nom, prenom, age, sexe, mail, taille, mdp) VALUES (?,?,?,?,?,?,?,?) "; 
+        String sql = "INSERT INTO table_user (nom, prenom, age, sexe, mail, taille, mdp) VALUES (?,?,?,?,?,?,?,?) "; 
         Connection Connexion = ConnectBd.getConnection(); 
         
         PreparedStatement ordre = Connexion.prepareStatement(sql) ; 
