@@ -50,6 +50,6 @@ public class SuiviPoids {
         this.poids = poids;
     }
     
-    
+ 
     
 }
