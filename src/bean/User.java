@@ -18,13 +18,12 @@ private int id ;
     private String age ; 
     private String sexe ; 
     private String taille ; 
-    private double poids ; 
     private String mdp ;
 
     public User() {
     }
 
-    public User(int id, String nom, String prenom, String mail, String age, String sexe, String taille, double poids, String mdp) {
+    public User(int id, String nom, String prenom, String mail, String age, String sexe, String taille, String mdp) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -32,7 +31,6 @@ private int id ;
         this.age = age;
         this.sexe = sexe;
         this.taille = taille;
-        this.poids = poids;
         this.mdp = mdp;
     }
 
@@ -92,13 +90,6 @@ private int id ;
         this.taille = taille;
     }
 
-    public double getPoids() {
-        return poids;
-    }
-
-    public void setPoids(double poids) {
-        this.poids = poids;
-    }
 
     public String getMdp() {
         return mdp;
