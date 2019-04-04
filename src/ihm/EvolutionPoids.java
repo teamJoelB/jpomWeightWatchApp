@@ -10,8 +10,11 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.ui.ApplicationFrame;
 import org.jfree.ui.RefineryUtilities;
 import org.jfree.chart.plot.PlotOrientation;
+<<<<<<< HEAD
 import org.jfree.data.category.DefaultCategoryDataset;
 */
+
+
 import bean.SuiviPoids;
 import bean.User;
 import dao.UserDao;
